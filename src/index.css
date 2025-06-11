@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --theme-cream: #f4e7bb;
+  --theme-green: #bbdebc;
+  --theme-orange: #eba472;
+  --theme-pink: #f7d7ca;
+
+  --a: #c8d589;
+  --b: #a4c3a2;
+  --c: #f4c2c2;
+  --d: #ede6d8;
+  --e: #4b4b4b;
+
+  --aa: #f6cedb;
+  --bb: #f3a7c2;
+  --cc: #ad6c80;
+  --dd: #4d2e2e;
+  --ee: #fff3f6;
+  --ff: #b8c6a3;
+  --gg: #907380;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  color: #ffffff;
+  /* font-family: "Petit Formal Script", cursive; */
+  /* font-family: "Pacifico", cursive; */
+  /* font-family: "Ribeye", serif; */
+  /* font-family: "Charm", cursive; */
+  font-family: "Libre Bodoni", serif;
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 15vw;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 5vw;
+}
+
+h3 {
+  font-size: 4vw;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2vw;
+  font-weight: 600;
 }
