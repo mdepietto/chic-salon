@@ -30,7 +30,7 @@ function DrawerAppBar() {
       name: 'Book Now',
       onClick: () => console.log('add this later'),
       style: {
-        backgroundColor: 'var(--theme-orange)',
+        backgroundColor: 'var(--bb)',
         border: '2px solid white',
         opacity: .9,
       },
