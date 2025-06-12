@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import palmLeaf3 from '../pics/palmLeaf3.jpg';
+import sakura from '../pics/sakura1.jpg';
 import TitleSpacer from "./shared/TitleSpacer";
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
 
 const AboutWrapper = styled.div`
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(${palmLeaf3});
+    url(${sakura});
   width: 100%;
   background-size: cover;
   background-position: center;

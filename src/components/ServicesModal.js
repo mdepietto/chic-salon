@@ -8,7 +8,7 @@ const StyledModal = styled(Modal)`
 `;
 
 const ModalContentsWrapper = styled.div`
-  background-color: var(--theme-orange);
+  background-color: var(--cc);
   height: 40vh;
   width: 60vw;
   border-radius: 10px;
