@@ -38,9 +38,10 @@ const InfoWrapper = styled.div`
   flex-direction: column;
 `;
 
-const HomePage = () => {
+const HomePage = ({ ref }) => {
+
   return (
-    <HomePageWrapper>
+    <HomePageWrapper ref={ref}>
       <ScrollInWrapperHOC Component={InfoWrapper}>
         <StyledImage src={logoWhite} alt='logo' />
       </ScrollInWrapperHOC>
