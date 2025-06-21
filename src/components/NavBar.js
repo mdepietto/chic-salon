@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { Home, Face2, CalendarMonth } from '@mui/icons-material';
+import { ArrowUpward, Face2, CalendarMonth } from '@mui/icons-material';
 import ServicesModal from './ServicesModal';
 import heart from '../pics/heart.png';
 import styled from 'styled-components';
@@ -15,29 +15,52 @@ const StyledHeart = styled.img`
   transform: rotate(315deg);
 `;
 
-const HorizontalNavBar = ({ navItems }) => {
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar
-        component="nav"
+const NavBarSwitcher = ({ isHalfway, navItems }) => (
+  <Box sx={{ display: 'flex' }}>
+    <AppBar
+      component="nav"
+      sx={{
+        bgcolor: "transparent",
+        marginTop: '.5vw',
+      }}
+      elevation={0}
+      position='fixed'
+    >
+      <Toolbar
         sx={{
-          bgcolor: "transparent",
-          marginTop: '.5vw',
+          justifyContent: isHalfway ? 'end' : 'space-between',
         }}
-        elevation={0}
-        position='fixed'
       >
-        <Toolbar
+        {!isHalfway && <StyledHeart src={heart} alt='heart' />}
+        <Box
           sx={{
             display: 'flex',
-            justifyContent: 'space-between',
+            flexDirection: isHalfway ? 'column' : 'row',
           }}
         >
-          <StyledHeart src={heart} alt='heart' />
-          <Box>
-            {navItems.map(({ name, onClick, style }) => (
+          {navItems.map(({ icon, name, onClick, style }) =>
+            isHalfway ? (
+              <Tooltip
+                arrow
+                key={name}
+                title={<p>{name}</p>}
+                placement='left'
+              >
+                <IconButton
+                  aria-label={name}
+                  key={name}
+                  onClick={onClick}
+                  sx={{
+                    marginBottom: '1vw',
+                    ...style
+                  }}
+                >
+                  {icon}
+                </IconButton>
+              </Tooltip>
+            ) : (
               <Button
-                ariaLabel={name}
+                aria-label={name}
                 key={name}
                 onClick={onClick}
                 sx={{
@@ -49,64 +72,13 @@ const HorizontalNavBar = ({ navItems }) => {
               >
                 {name}
               </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
-};
-
-const VerticalNavBar = ({ navItems }) => {
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar
-        component="nav"
-        sx={{
-          bgcolor: "transparent",
-          marginTop: '1vw',
-        }}
-        elevation={0}
-        position='fixed'
-      >
-        <Toolbar
-          sx={{
-            display: 'flex',
-            justifyContent: 'end',
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            {navItems.map(({ icon, name, onClick, style }) => (
-              <Tooltip
-                arrow
-                title={<p>{name}</p>}
-                placement='left'
-                sx={{ color: 'success.main' }}
-              >
-                <IconButton
-                  ariaLabel={name}
-                  key={name}
-                  onClick={onClick}
-                  sx={{
-                    marginBottom: '1vw',
-                    ...style
-                  }}
-                >
-                  {icon}
-                </IconButton>
-              </Tooltip>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
-};
+            )
+          )}
+        </Box>
+      </Toolbar>
+    </AppBar>
+  </Box>
+);
 
 const NavBar = ({ isHalfway }) => {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
@@ -126,12 +98,12 @@ const NavBar = ({ isHalfway }) => {
     width: '4vw',
   };
 
-  const VerticalNavItems = [
-    {
-      icon: <Home sx={iconStyles} />,
-      name: 'Home',
+  const navItems = [
+    ...(isHalfway ? [{
+      icon: <ArrowUpward sx={iconStyles} />,
+      name: 'Top',
       onClick: scrollToTop,
-    },
+    }] : []),
     {
       icon: <Face2 sx={iconStyles} />,
       name: 'Services',
@@ -148,30 +120,13 @@ const NavBar = ({ isHalfway }) => {
     }
   ];
 
-  const HorizontalNavItems = [
-    {
-      name: 'Services',
-      onClick: handleOpenModal,
-    },
-    {
-      name: 'Book Now',
-      onClick: () => console.log('add this later'),
-      style: {
-        backgroundColor: 'var(--bb)',
-        border: '2px solid white',
-      },
-    },
-  ];
-
-  // make navbar fixed until bottom of homepage reaches halfway point of screen, then transition it
-  // to a vertical navbar at the top right corner of the page with icons instead of words
-
   return (
     <div>
-      { isHalfway ?
-        <VerticalNavBar navItems={VerticalNavItems} /> :
-        <HorizontalNavBar navItems={HorizontalNavItems} />
-      }
+      <NavBarSwitcher
+        isHalfway={isHalfway}
+        navItems={navItems}
+      />
+
       { isModalOpen && (
         <ServicesModal
           isModalOpen={isModalOpen}

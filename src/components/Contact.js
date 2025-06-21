@@ -12,6 +12,7 @@ const ContactWrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+  overflow-x: hidden;
 `;
 
 const TitleWrapper = styled.div`
