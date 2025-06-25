@@ -26,7 +26,7 @@ const StyledVideo = styled.video`
 `;
 
 const StyledImage = styled.img`
-  width: 50vw;
+  width: 85vw;
 `;
 
 const InfoWrapper = styled.div`

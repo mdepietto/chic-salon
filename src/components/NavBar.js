@@ -11,7 +11,7 @@ import heart from '../pics/heart.png';
 import styled from 'styled-components';
 
 const StyledHeart = styled.img`
-  width: 3vw;
+  width: 7vw;
   transform: rotate(315deg);
 `;
 
@@ -45,6 +45,16 @@ const NavBarSwitcher = ({ isHalfway, navItems }) => (
                 key={name}
                 title={<p>{name}</p>}
                 placement='left'
+                slotProps={{
+                  tooltip: {
+                    sx: {
+                      bgcolor: 'transparent',
+                      '& .MuiTooltip-arrow': {
+                        color: 'transparent',
+                      },
+                    },
+                  },
+                }}
               >
                 <IconButton
                   aria-label={name}
@@ -94,8 +104,8 @@ const NavBar = ({ isHalfway }) => {
   };
 
   const iconStyles = {
-    height: '4vw',
-    width: '4vw',
+    height: '8vw',
+    width: '8vw',
   };
 
   const navItems = [
@@ -114,7 +124,7 @@ const NavBar = ({ isHalfway }) => {
       name: 'Book Now',
       onClick: () => console.log('add this later'),
       style: {
-        backgroundColor: 'var(--bb)',
+        backgroundColor: 'var(--theme-gold)',
         border: '2px solid white',
       },
     }

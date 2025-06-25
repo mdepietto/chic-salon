@@ -5,12 +5,12 @@ import { Facebook, Instagram, Pinterest } from '@mui/icons-material';
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
 
 const ContactWrapper = styled.div`
-  background: var(--cc);
+  background: var(--theme-brick);
   height: 100vh;
-  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   position: relative;
   overflow-x: hidden;
 `;
@@ -20,6 +20,7 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-bottom: 10vw;
 `;
 
 const InfoWrapper = styled.div`
@@ -28,62 +29,62 @@ const InfoWrapper = styled.div`
   align-items: center;
   position: relative;
 
+  a {
+    text-decoration: none;
+  }
+
   h2 {
-    margin-top: 2vw;
+    margin-top: 9vw;
+    margin-bottom: 3vw;
   }
 `;
 
-const StyledSVG1 = styled.svg`
+const StyledSVG = styled.svg`
   position: absolute;
   height: 100%;
   width: 100%;
-  transform: translateX(40vw);
 `;
 
-const StyledSVG2 = styled.svg`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  transform: translateX(-50vw);
-`;
+const Contact = () => (
+  <ContactWrapper>
+      <StyledSVG viewBox="-120 20 130 60" xmlns="http://www.w3.org/2000/svg">
+        <path fill="var(--theme-pink)" d="M44.5,-61.9C57.2,-52.1,66.7,-38.4,69.6,-23.9C72.4,-9.5,68.7,5.8,61.5,17.6C54.3,29.3,43.8,37.6,33,48.3C22.2,59.1,11.1,72.4,-2.9,76.4C-16.9,80.3,-33.7,75,-42.6,63.6C-51.4,52.2,-52.2,34.7,-58.4,18.3C-64.7,2,-76.3,-13.3,-73.8,-24.9C-71.3,-36.6,-54.8,-44.6,-40.1,-53.8C-25.5,-63,-12.7,-73.4,1.6,-75.6C15.9,-77.8,31.8,-71.7,44.5,-61.9Z" />
+      </StyledSVG>
+      <StyledSVG viewBox="0 -80 130 50" xmlns="http://www.w3.org/2000/svg">
+        <path fill="var(--theme-pink)" d="M44.5,-61.9C57.2,-52.1,66.7,-38.4,69.6,-23.9C72.4,-9.5,68.7,5.8,61.5,17.6C54.3,29.3,43.8,37.6,33,48.3C22.2,59.1,11.1,72.4,-2.9,76.4C-16.9,80.3,-33.7,75,-42.6,63.6C-51.4,52.2,-52.2,34.7,-58.4,18.3C-64.7,2,-76.3,-13.3,-73.8,-24.9C-71.3,-36.6,-54.8,-44.6,-40.1,-53.8C-25.5,-63,-12.7,-73.4,1.6,-75.6C15.9,-77.8,31.8,-71.7,44.5,-61.9Z" />
+      </StyledSVG>
 
-const Contact = () => {
-  return (
-    <ContactWrapper>
-        <StyledSVG1 viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path fill="var(--bb)" d="M44.5,-61.9C57.2,-52.1,66.7,-38.4,69.6,-23.9C72.4,-9.5,68.7,5.8,61.5,17.6C54.3,29.3,43.8,37.6,33,48.3C22.2,59.1,11.1,72.4,-2.9,76.4C-16.9,80.3,-33.7,75,-42.6,63.6C-51.4,52.2,-52.2,34.7,-58.4,18.3C-64.7,2,-76.3,-13.3,-73.8,-24.9C-71.3,-36.6,-54.8,-44.6,-40.1,-53.8C-25.5,-63,-12.7,-73.4,1.6,-75.6C15.9,-77.8,31.8,-71.7,44.5,-61.9Z" transform="translate(100 100)" />
-        </StyledSVG1>
-        <StyledSVG2 viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path fill="var(--bb)" d="M44.5,-61.9C57.2,-52.1,66.7,-38.4,69.6,-23.9C72.4,-9.5,68.7,5.8,61.5,17.6C54.3,29.3,43.8,37.6,33,48.3C22.2,59.1,11.1,72.4,-2.9,76.4C-16.9,80.3,-33.7,75,-42.6,63.6C-51.4,52.2,-52.2,34.7,-58.4,18.3C-64.7,2,-76.3,-13.3,-73.8,-24.9C-71.3,-36.6,-54.8,-44.6,-40.1,-53.8C-25.5,-63,-12.7,-73.4,1.6,-75.6C15.9,-77.8,31.8,-71.7,44.5,-61.9Z" transform="translate(100 100)" />
-        </StyledSVG2>
+      <ScrollInWrapperHOC Component={TitleWrapper}>
+        <h1>Let's</h1>
+        <h1>Connect</h1>
+      </ScrollInWrapperHOC>
 
-        <ScrollInWrapperHOC Component={TitleWrapper}>
-          <h1>Let's</h1>
-          <h1>Connect</h1>
-        </ScrollInWrapperHOC>
-
-        <ScrollInWrapperHOC Component={InfoWrapper}>
-          <h2>Phone</h2>
-          <p>(631) 835-7726</p>
-          <h2>E-Mail</h2>
-          <p>info@wiinksalon.com</p>
-          <h2>Address</h2>
+      <ScrollInWrapperHOC Component={InfoWrapper}>
+        <h2>Phone</h2>
+        <a href='tel:6318357726'><p>(631) 835-7726</p></a>
+        <h2>E-Mail</h2>
+        <a href='mailto:info@wiinksalon.com'><p>info@wiinksalon.com</p></a>
+        <h2>Address</h2>
+        <a
+          href="https://www.google.com/maps/place/Your+Mother's+House/@40.7420341,-73.6668847,17z/data=!3m1!4b1!4m6!3m5!1s0x89c262aee4dc313f:0x8d839aeebf14796f!8m2!3d40.7420301!4d-73.6620138!16s%2Fg%2F1hc1glml5?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D"
+          target='blank'
+        >
           <p>69 Your Mom's House</p>
-          <h2>Social</h2>
-          <Stack direction="row" spacing={.5}>
-            <IconButton aria-label="Instagram">
-              <Instagram fontSize='large' />
-            </IconButton>
-            <IconButton aria-label="Facebook">
-              <Facebook fontSize='large' />
-            </IconButton>
-            <IconButton aria-label="Pinterest">
-              <Pinterest fontSize='large' />
-            </IconButton>
-          </Stack>
-        </ScrollInWrapperHOC>
-    </ContactWrapper>
-  );
-};
+        </a>
+        <h2>Social</h2>
+        <Stack direction="row" spacing={.5}>
+          <IconButton aria-label="Instagram">
+            <Instagram fontSize='large' />
+          </IconButton>
+          <IconButton aria-label="Facebook">
+            <Facebook fontSize='large' />
+          </IconButton>
+          <IconButton aria-label="Pinterest">
+            <Pinterest fontSize='large' />
+          </IconButton>
+        </Stack>
+      </ScrollInWrapperHOC>
+  </ContactWrapper>
+);
 
 export default Contact;

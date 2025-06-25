@@ -15,13 +15,15 @@ const Box = styled.div`
 const Palette = () => {
   return (
     <PaletteWrapper>
-      <Box color='var(--aa)' />
-      <Box color='var(--bb)' />
-      <Box color='var(--cc)' />
-      <Box color='var(--dd)' />
-      <Box color='var(--ee)' />
-      <Box color='var(--ff)' />
-      <Box color='var(--gg)' />
+      <Box color='var(--theme-peach)' />
+      <Box color='var(--theme-pink)' />
+      <Box color='var(--theme-brick)' />
+      <Box color='var(--theme-brown)' />
+      <Box color='var(--theme-cream)' />
+      <Box color='var(--theme-green)' />
+      <Box color='var(--theme-red-sand)' />
+      <Box color='var(--theme-gold)' />
+      <Box color='var(--theme-coral)' />
     </PaletteWrapper>
   );
 };

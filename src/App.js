@@ -12,16 +12,18 @@ function App() {
     threshold: 0.5,
   });
 
-  const [ isHalfway, setIsHalfway ] = useState(false);
+  const [isHalfway, setIsHalfway] = useState(false);
+  
+  // const switchCondition = isHalfway || window.innerWidth < 768;
 
   useEffect(() => {
-    inView ? setIsHalfway(false) : setIsHalfway(true);
+    inView && window.innerWidth > 768 ? setIsHalfway(false) : setIsHalfway(true);
   }, [inView, isHalfway]);
 
   return (
     <div className="App">
       <NavBar isHalfway={isHalfway} />
-      <Palette />
+      {/* <Palette /> */}
       <HomePage ref={ref} />
       <Gallery />
       <About />

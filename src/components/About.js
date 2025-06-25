@@ -7,25 +7,20 @@ const AboutWrapper = styled.div`
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${sakura});
-  width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 6vw 0 10vw 0;
-`;
-
-const StyledP = styled.p`
-  width: 70%;
+  padding: 10%;
 `;
 
 const About = () => {
   return (
     <AboutWrapper>
       <TitleSpacer info="Behind the Lashes" />
-      <ScrollInWrapperHOC Component={StyledP}>
+      <ScrollInWrapperHOC Component='p'>
         At WIINK, we believe beauty is in the details — 
         and nothing makes a statement quite like perfectly styled lashes. 
         Located in the heart of Port Jeff, our salon specializes in 

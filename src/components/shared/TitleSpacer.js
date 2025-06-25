@@ -1,16 +1,10 @@
 import styled from "styled-components";
 
-const H2Wrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 70%;
-  margin: 2vw 0;
+  margin: 2vw 1vw;
   z-index: 1;
-`;
-
-const StyledH2 = styled.h2`
-  padding: 2vw .5vw;
-  line-height: 4vw;
 `;
 
 const Spacer = styled.div`
@@ -19,10 +13,10 @@ const Spacer = styled.div`
 
 const TitleSpacer = ({ info }) => {
   return (
-    <H2Wrapper>
-      <StyledH2>{info}</StyledH2>
+    <Wrapper>
+      <h2>{info}</h2>
       <Spacer></Spacer>
-    </H2Wrapper>
+    </Wrapper>
   )
 };
 

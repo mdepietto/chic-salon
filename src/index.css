@@ -1,22 +1,13 @@
 :root {
-  --theme-cream: #f4e7bb;
-  --theme-green: #bbdebc;
-  --theme-orange: #eba472;
-  --theme-pink: #f7d7ca;
-
-  --a: #c8d589;
-  --b: #a4c3a2;
-  --c: #f4c2c2;
-  --d: #ede6d8;
-  --e: #4b4b4b;
-
-  --aa: #f6cedb;
-  --bb: #f3a7c2;
-  --cc: #ad6c80;
-  --dd: #4d2e2e;
-  --ee: #fff3f6;
-  --ff: #b8c6a3;
-  --gg: #907380;
+  --theme-peach: #f6cedb;
+  --theme-pink: #f3a7c2;
+  --theme-brick: #ad6c80;
+  --theme-brown: #4d2e2e;
+  --theme-cream: #fff3f6;
+  --theme-green: #b8c6a3;
+  --theme-red-sand: #907380;
+  --theme-gold: #ffb347;
+  --theme-coral: #ff6b6b;
 }
 
 * {
@@ -31,11 +22,13 @@
 }
 
 h1 {
-  font-size: 11vw;
+  font-size: 22vw;
+  line-height: 12vw;
 }
 
 h2 {
-  font-size: 5vw;
+  font-size: 11vw;
+  line-height: 8vw;
 }
 
 h3 {
@@ -44,6 +37,35 @@ h3 {
 
 p {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 2vw;
+  font-size: 5vw;
   font-weight: 600;
+}
+
+
+/* phone */
+@media (min-width: 481px) {
+  h1 {
+    font-size: 10px;
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+/* laptop */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 40px;
+  }
 }
