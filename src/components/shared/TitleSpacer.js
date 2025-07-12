@@ -3,8 +3,13 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 2vw 1vw;
+  margin: 5vw 0;
   z-index: 1;
+  width: 97%;
+
+  @media (min-width: 1024px) {
+    margin: 3vw 0;
+  }
 `;
 
 const Spacer = styled.div`

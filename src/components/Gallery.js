@@ -9,7 +9,19 @@ const GalleryWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 5%;
+  padding: 3% 5%;
+
+  @media (min-width: 768px) {
+    padding: 3% 8%;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 3% 18%;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 3% 25%;
+  }
 `;
 
 const StyledSvg = styled.svg`
@@ -31,6 +43,17 @@ const StyledImage = styled.img`;
   aspect-ratio: 1/1;
   width: 48%;
   object-fit: cover;
+
+  @media (min-width: 768px) {
+    width: 32%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 31%;
+  }
+
+  @media (min-width: 1280px) {
+  }
 `;
 
 const Gallery = () => (

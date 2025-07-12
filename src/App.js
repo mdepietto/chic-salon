@@ -23,7 +23,6 @@ function App() {
   return (
     <div className="App">
       <NavBar isHalfway={isHalfway} />
-      {/* <Palette /> */}
       <HomePage ref={ref} />
       <Gallery />
       <About />

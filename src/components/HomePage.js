@@ -27,6 +27,18 @@ const StyledVideo = styled.video`
 
 const StyledImage = styled.img`
   width: 85vw;
+
+  @media (min-width: 768px) {
+    width: 70vw;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50vw;
+  }
+
+  @media (min-width: 1280px) {
+    width: 45vw;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -43,7 +55,7 @@ const HomePage = ({ ref }) => {
   return (
     <HomePageWrapper ref={ref}>
       <ScrollInWrapperHOC Component={InfoWrapper}>
-        <StyledImage src={logoWhite} alt='logo' />
+        <StyledImage className='main-logo' src={logoWhite} alt='logo' />
       </ScrollInWrapperHOC>
       <StyledVideo autoPlay muted loop id='palmTrees'>
         {/* <source src={palmTrees} type='video/mp4' /> */}

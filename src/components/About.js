@@ -14,6 +14,18 @@ const AboutWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 10%;
+  
+  @media (min-width: 768px) {
+    padding: 3% 8%;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 3% 18%;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 3% 25%;
+  }
 `;
 
 const About = () => {
