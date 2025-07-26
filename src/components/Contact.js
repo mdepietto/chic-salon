@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { Facebook, Instagram, Pinterest } from '@mui/icons-material';
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
+import { screenPixelWidths } from "../data/data";
 
 const ContactWrapper = styled.div`
   background: var(--theme-brick);
@@ -16,7 +17,7 @@ const ContactWrapper = styled.div`
   padding: 5vw;
   box-sizing: border-box;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     flex-direction: row;
     justify-content: space-evenly;
   }
@@ -31,13 +32,13 @@ const TitleWrapper = styled.div`
     margin-bottom: -15vw;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     h1:first-of-type {
       margin-bottom: -8vw;
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${screenPixelWidths.laptop}) {
     h1:first-of-type {
       margin-bottom: -5vw;
     }
@@ -53,7 +54,7 @@ const InfoWrapper = styled.div`
     text-decoration: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     margin-top: 0;
   }
 `;
@@ -63,6 +64,20 @@ const StyledSVG = styled.svg`
   height: 100%;
   width: 100%;
 `;
+
+const iconStyles = {
+  fontSize: '8vw',
+
+  [`@media (min-width: ${screenPixelWidths.tablet})`]: {
+    fontSize: '6vw',
+  },
+  [`@media (min-width: ${screenPixelWidths.tabletL})`]: {
+    fontSize: '5vw',
+  },
+  [`@media (min-width: ${screenPixelWidths.laptop})`]: {
+    fontSize: '4vw',
+  },
+}
 
 const Contact = () => (
   <ContactWrapper>
@@ -93,13 +108,13 @@ const Contact = () => (
         <h3>Social</h3>
         <Stack direction="row" spacing={.5}>
           <IconButton aria-label="Instagram">
-            <Instagram fontSize='large' />
+            <Instagram sx={iconStyles} />
           </IconButton>
           <IconButton aria-label="Facebook">
-            <Facebook fontSize='large' />
+            <Facebook sx={iconStyles} />
           </IconButton>
           <IconButton aria-label="Pinterest">
-            <Pinterest fontSize='large' />
+            <Pinterest sx={iconStyles} />
           </IconButton>
         </Stack>
       </ScrollInWrapperHOC>

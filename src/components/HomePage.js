@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import palmTrees from '../videos/palmTrees.mp4';
 import sakura from '../videos/sakura2.mp4';
 import logoWhite from '../pics/logo-white.png';
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
+import { screenPixelWidths } from '../data/data';
 
 const HomePageWrapper = styled.div`
   position: relative;
@@ -28,15 +28,15 @@ const StyledVideo = styled.video`
 const StyledImage = styled.img`
   width: 85vw;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     width: 70vw;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${screenPixelWidths.tabletL}) {
     width: 50vw;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${screenPixelWidths.laptop}) {
     width: 45vw;
   }
 `;
@@ -58,7 +58,6 @@ const HomePage = ({ ref }) => {
         <StyledImage className='main-logo' src={logoWhite} alt='logo' />
       </ScrollInWrapperHOC>
       <StyledVideo autoPlay muted loop id='palmTrees'>
-        {/* <source src={palmTrees} type='video/mp4' /> */}
         <source src={sakura} type='video/mp4' />
       </StyledVideo>
     </HomePageWrapper>

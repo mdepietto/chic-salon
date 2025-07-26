@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { screenPixelWidths } from "../../data/data";
 
 const Wrapper = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ const Wrapper = styled.div`
   z-index: 1;
   width: 97%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${screenPixelWidths.tabletL}) {
     margin: 3vw 0;
   }
 `;

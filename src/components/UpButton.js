@@ -31,7 +31,7 @@ const UpButton = () => {
           aria-label="SwipeDown"
           sx={{
             position: 'fixed',
-            bottom: 10,
+            // bottom: '2vw',
             right: 10,
             backgroundColor: 'var(--theme-orange)',
             zIndex: 9999,

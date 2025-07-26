@@ -2,6 +2,7 @@ import styled from "styled-components";
 import sakura from '../pics/sakura1.jpg';
 import TitleSpacer from "./shared/TitleSpacer";
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
+import { screenPixelWidths } from "../data/data";
 
 const AboutWrapper = styled.div`
   background-image:
@@ -15,15 +16,15 @@ const AboutWrapper = styled.div`
   flex-direction: column;
   padding: 10%;
   
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     padding: 3% 8%;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${screenPixelWidths.tabletL}) {
     padding: 3% 18%;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${screenPixelWidths.laptop}) {
     padding: 3% 25%;
   }
 `;

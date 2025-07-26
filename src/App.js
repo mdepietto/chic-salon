@@ -4,7 +4,6 @@ import HomePage from "./components/HomePage";
 import About from "./components/About";
 import Gallery from './components/Gallery';
 import Contact from "./components/Contact";
-import Palette from './components/shared/Palette';
 import { useInView } from 'react-intersection-observer';
 
 function App() {
@@ -13,11 +12,9 @@ function App() {
   });
 
   const [isHalfway, setIsHalfway] = useState(false);
-  
-  // const switchCondition = isHalfway || window.innerWidth < 768;
 
   useEffect(() => {
-    inView && window.innerWidth > 768 ? setIsHalfway(false) : setIsHalfway(true);
+    inView ? setIsHalfway(false) : setIsHalfway(true);
   }, [inView, isHalfway]);
 
   return (

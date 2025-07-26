@@ -2,6 +2,7 @@ import { images } from '../pics/images';
 import TitleSpacer from './shared/TitleSpacer';
 import styled from 'styled-components';
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
+import { screenPixelWidths } from '../data/data';
 
 const GalleryWrapper = styled.div`
   background: var(--theme-peach);
@@ -11,15 +12,15 @@ const GalleryWrapper = styled.div`
   position: relative;
   padding: 3% 5%;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     padding: 3% 8%;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${screenPixelWidths.tabletL}) {
     padding: 3% 18%;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${screenPixelWidths.laptop}) {
     padding: 3% 25%;
   }
 `;
@@ -44,15 +45,12 @@ const StyledImage = styled.img`;
   width: 48%;
   object-fit: cover;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${screenPixelWidths.tablet}) {
     width: 32%;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${screenPixelWidths.tabletL}) {
     width: 31%;
-  }
-
-  @media (min-width: 1280px) {
   }
 `;
 
