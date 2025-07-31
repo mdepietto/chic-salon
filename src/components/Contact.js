@@ -95,15 +95,15 @@ const Contact = () => (
 
       <ScrollInWrapperHOC Component={InfoWrapper}>
         <h3>Phone</h3>
-        <a href='tel:6318357726'><p>(631) 835-7726</p></a>
+        <a href='tel:6318357726'><p>(xxx) xxx-xxxx</p></a>
         <h3>E-Mail</h3>
-        <a href='mailto:info@wiinksalon.com'><p>info@wiinksalon.com</p></a>
+        <a href='mailto:info@wiinksalon.com'><p>info@chicsalon.com</p></a>
         <h3>Address</h3>
         <a
           href="https://www.google.com/maps/place/Your+Mother's+House/@40.7420341,-73.6668847,17z/data=!3m1!4b1!4m6!3m5!1s0x89c262aee4dc313f:0x8d839aeebf14796f!8m2!3d40.7420301!4d-73.6620138!16s%2Fg%2F1hc1glml5?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D"
           target='blank'
         >
-          <p>69 Your Mom's House</p>
+          <p>882 Sasquahana Blvd.</p>
         </a>
         <h3>Social</h3>
         <Stack direction="row" spacing={.5}>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import sakura from '../videos/sakura2.mp4';
-import logoWhite from '../pics/logo-white.png';
+import logoWhite from '../pics/logo-white2.png';
 import ScrollInWrapperHOC from './shared/ScrollInWrapperHOC';
 import { screenPixelWidths } from '../data/data';
 

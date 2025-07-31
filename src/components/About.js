@@ -34,7 +34,7 @@ const About = () => {
     <AboutWrapper>
       <TitleSpacer info="Behind the Lashes" />
       <ScrollInWrapperHOC Component='p'>
-        At WIINK, we believe beauty is in the details — 
+        At CHIC, we believe beauty is in the details — 
         and nothing makes a statement quite like perfectly styled lashes. 
         Located in the heart of Port Jeff, our salon specializes in 
         high-quality lash extensions, lifts, and brow services tailored 

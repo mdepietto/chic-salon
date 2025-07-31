@@ -3,6 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
 import Modal from './shared/Modal';
+import styled from 'styled-components';
 
 // continue styling with similarities between old calendar
 const dateTimePickerStyles = {
@@ -33,6 +34,11 @@ const dateTimePickerStyles = {
     fontFamily: '"Arial", serif',
   },
 
+  // calendar picker body
+  '& .MuiDateCalendar-viewTransitionContainer': {
+    padding: '2vw',
+  },
+
   // weekday
   '& .MuiDayCalendar-weekDayLabel': {
     fontSize: '5vw',
@@ -59,9 +65,17 @@ const dateTimePickerStyles = {
     borderColor: 'var(--theme-brown)',
   },
 
-  // cancel/next
+  // cancel/next/ok
   '& .MuiButton-text': {
     color: 'var(--theme-brown)',
+  },
+
+  '& .MuiTypography-h3': {
+    color: 'white',
+  },
+
+  '& .MuiTypography-h3[data-selected="true"]': {
+    color: 'white',
   },
 
   // am/pm selected
@@ -75,13 +89,17 @@ const dateTimePickerStyles = {
   },
 }
 
-// TODO: move AcceptedModal to the NavBar level so that
-// when you accept the date, the calendar closes,
-// and opens the AcceptedModal
+const StyledAcceptedModal = styled.div`
+  text-align: center;
+`;
 
 const Calendar = ({ onClose }) => {
   const [isAcceptedModalOpen, setIsAcceptedModalOpen] = useState(false);
-  const handleCloseAcceptedModal = () => setIsAcceptedModalOpen(false);
+  const handleCloseAcceptedModal = () => {
+    setIsAcceptedModalOpen(false);
+
+    onClose();
+  };
 
   const [dateSelected, setDateSelected] = useState();
 
@@ -89,13 +107,20 @@ const Calendar = ({ onClose }) => {
     setDateSelected(newDate);
 
     setIsAcceptedModalOpen(true);
-
-    onClose();
   }
 
   const AcceptedModal = () => {
+    const dateString = dateSelected.toDate().toLocaleString('en-US', {
+      hourCycle: 'h12',
+      dateStyle: 'long',
+      timeStyle: 'short',
+    })
+
     return (
-      <div>scheduled for {JSON.stringify(dateSelected)}</div>
+      <StyledAcceptedModal>
+        <p style={{ color: 'var(--theme-peach)' }}>You're scheduled for:</p>
+        <h3>{dateString}</h3>
+      </StyledAcceptedModal>
     )
   }
   

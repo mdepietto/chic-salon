@@ -10,7 +10,8 @@ const StyledModal = styled(MuiModal)`
 
 const ModalContentsWrapper = styled.div`
   background-color: var(--theme-brick);
-  width: ${({ modalType }) => modalType === 'Services' && '60vw'};
+  width: ${({ modaltype }) => modaltype === 'Services' && '60vw'};
+  max-width: 80vw;
   border-radius: 10px;
   padding: 6vw;
   display: flex;
@@ -31,15 +32,15 @@ const ModalContentsWrapper = styled.div`
   }
 
   @media (min-width: ${screenPixelWidths.laptop}) {
-    width: 30vw;
+    width: 35vw;
     padding: 4vw;
   }
 `;
 
 const Modal = ({ isModalOpen, handleCloseModal, Component }) =>
   <StyledModal open={isModalOpen} onClose={handleCloseModal}>
-    <ModalContentsWrapper modalType={Component.name}>
-      <Component onClose={handleCloseModal}/>
+    <ModalContentsWrapper modaltype={Component.name}>
+      <Component onClose={handleCloseModal} />
     </ModalContentsWrapper>
   </StyledModal>
 

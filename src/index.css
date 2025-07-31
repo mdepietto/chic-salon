@@ -66,22 +66,47 @@ p {
     line-height: 4vw;
   }
 
-  .MuiTypography-h4 {
-    font-size: 4vw !important;
+  /* main */
+  .MuiDateCalendar-root {
+    width: 100% !important;
   }
 
+  /* top year */
   .MuiTypography-subtitle1 {
     font-size: 4vw !important;
   }
 
+  /* top month/day */
+  .MuiTypography-h4 {
+    font-size: 4vw !important;
+  }
+
+  /* bottom month/year */
   .MuiPickersCalendarHeader-label {
     font-size: 3.5vw !important;
   }
 
+  /* calendar picker body */
+  .MuiDateCalendar-viewTransitionContainer {
+    padding: 2vw 7vw !important;
+  }
+
+  /* day of week */
+  .MuiDayCalendar-header {
+    justify-content: space-between !important;
+  }
+
+  /* day of week */
   .MuiDayCalendar-weekDayLabel {
     font-size: 3.5vw !important;
   }
 
+  /* number row */
+  .MuiDayCalendar-weekContainer {
+    justify-content: space-between !important;
+  }
+
+  /* individual dumber */
   .MuiPickersDay-root {
     font-size: 2.5vw !important;
   }
@@ -99,15 +124,27 @@ p {
     line-height: 3.5vw;
   }
 
-  /* TODO: continue from here */
+  /* top year */
+  .MuiTypography-subtitle1 {
+    font-size: 3vw !important;
+  }
+
+  /* top month/day */
+  .MuiTypography-h4 {
+    font-size: 3vw !important;
+  }
+
+  /* bottom month/year */
   .MuiPickersCalendarHeader-label {
     font-size: 3vw !important;
   }
 
-  .MuiTypography-root {
-    font-size: 2vw !important;
+  /* day of week */
+  .MuiDayCalendar-weekDayLabel {
+    font-size: 3vw !important;
   }
 
+  /* individual dumber */
   .MuiPickersDay-root {
     font-size: 2vw !important;
   }
@@ -133,11 +170,36 @@ p {
     line-height: 3vw;
   }
 
-  .MuiTypography-root {
-    font-size: 1.5vw !important;
+  /* top year/month container */
+  .MuiPickersLayout-toolbar {
+    padding: 2vw !important;
   }
 
+  /* bottom month/year row */
+  .MuiPickersCalendarHeader-root {
+    padding: 1vw 2vw 0 2vw !important;
+  }
+
+  /* day of week */
+  .MuiDayCalendar-weekDayLabel {
+    font-size: 2.5vw !important;
+  }
+
+  /* individual dumber */
   .MuiPickersDay-root {
     font-size: 1.5vw !important;
+  }
+}
+
+/* just for calendar */
+@media (min-width: 1620px) {
+  /* bottom month/year row */
+  .MuiPickersCalendarHeader-root {
+    padding: 1vw 4vw 0 4vw !important;
+  }
+
+  /* calendar picker body */
+  .MuiDateCalendar-viewTransitionContainer {
+    padding: 1vw 9vw !important;
   }
 }
