@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chic-salon/static/css/main.896d0324.css",
+    "main.js": "/chic-salon/static/js/main.012080fa.js",
+    "static/media/sakura2.mp4": "/chic-salon/static/media/sakura2.5aa1dc7e1cbda4c4632c.mp4",
+    "static/media/logo-white2.png": "/chic-salon/static/media/logo-white2.9f5ef2542177fc2dadbe.png",
+    "static/media/gal2.jpg": "/chic-salon/static/media/gal2.4b5fb1b549b78301270f.jpg",
+    "static/media/gal3.jpg": "/chic-salon/static/media/gal3.3a8a9fdcd185bd036ebc.jpg",
+    "static/media/sakura1.jpg": "/chic-salon/static/media/sakura1.390866fcfe5ea69d70ca.jpg",
+    "static/media/gal5.jpg": "/chic-salon/static/media/gal5.8394f70299be9078dd64.jpg",
+    "static/media/gal1.jpg": "/chic-salon/static/media/gal1.3e97440023f9e6286824.jpg",
+    "static/media/gal4.jpg": "/chic-salon/static/media/gal4.13f0c384401a7b4d956a.jpg",
+    "static/media/heart.png": "/chic-salon/static/media/heart.afed47098782b66ea1bc.png",
+    "index.html": "/chic-salon/index.html",
+    "main.896d0324.css.map": "/chic-salon/static/css/main.896d0324.css.map",
+    "main.012080fa.js.map": "/chic-salon/static/js/main.012080fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.896d0324.css",
+    "static/js/main.012080fa.js"
+  ]
+}
