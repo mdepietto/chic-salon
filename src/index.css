@@ -8,6 +8,8 @@
   --theme-red-sand: #907380;
   --theme-gold: #ffb347;
   --theme-coral: #ff6b6b;
+
+  --border-radius: 10px;
 }
 
 * {
@@ -66,24 +68,34 @@ p {
     line-height: 4vw;
   }
 
-  /* main */
-  .MuiDateCalendar-root {
-    width: 100% !important;
-  }
-
   /* top year */
   .MuiTypography-subtitle1 {
-    font-size: 4vw !important;
+    font-size: min(4vw, 40px) !important;
   }
 
   /* top month/day */
   .MuiTypography-h4 {
-    font-size: 4vw !important;
+    font-size: min(5vw, 60px) !important;
+  }
+
+  /* time */
+  .MuiTypography-h3 {
+    font-size: min(5vw, 60px) !important;
+  }
+
+  /* am/pm */
+  .MuiTypography-subtitle2 {
+    font-size: min(2.5vw, 24px) !important;
+  }
+
+  /* all icons */
+  .MuiSvgIcon-root:not(.upArrow) {
+    font-size: min(4vw, 36px) !important;
   }
 
   /* bottom month/year */
   .MuiPickersCalendarHeader-label {
-    font-size: 3.5vw !important;
+    font-size: min(3.5vw, 30px) !important;
   }
 
   /* calendar picker body */
@@ -91,14 +103,14 @@ p {
     padding: 2vw 7vw !important;
   }
 
-  /* day of week */
+  /* day of week container */
   .MuiDayCalendar-header {
     justify-content: space-between !important;
   }
 
   /* day of week */
   .MuiDayCalendar-weekDayLabel {
-    font-size: 3.5vw !important;
+    font-size: min(3.5vw, 30px) !important;
   }
 
   /* number row */
@@ -106,13 +118,23 @@ p {
     justify-content: space-between !important;
   }
 
-  /* individual dumber */
+  /* individual number */
   .MuiPickersDay-root {
-    font-size: 2.5vw !important;
+    font-size: min(2.5vw, 24px) !important;
+  }
+
+  /* bottom button */
+  .MuiDialogActions-root > .MuiButton-text {
+    font-size: min(2vw, 20px) !important;
+  }
+
+  /* clock tab numbers */
+  .MuiMenuItem-root {
+    font-size: min(3vw, 28px) !important;
   }
 }
 
-/* laptop */
+/* large tablet */
 @media (min-width: 1024px) {
   h2 {
     font-size: 7vw;
@@ -131,26 +153,51 @@ p {
 
   /* top month/day */
   .MuiTypography-h4 {
+    font-size: 4vw !important;
+  }
+
+  /* time */
+  .MuiTypography-h3 {
+    font-size: 4vw !important;
+  }
+
+  /* am/pm */
+  .MuiTypography-subtitle2 {
+    font-size: 2vw !important;
+  }
+
+  /* all icons */
+  .MuiSvgIcon-root:not(.upArrow) {
     font-size: 3vw !important;
   }
 
   /* bottom month/year */
   .MuiPickersCalendarHeader-label {
-    font-size: 3vw !important;
+    font-size: 2.5vw !important;
   }
 
   /* day of week */
   .MuiDayCalendar-weekDayLabel {
-    font-size: 3vw !important;
+    font-size: 2.5vw !important;
   }
 
-  /* individual dumber */
+  /* individual number */
   .MuiPickersDay-root {
     font-size: 2vw !important;
   }
+
+  /* bottom button */
+  .MuiDialogActions-root > .MuiButton-text {
+    font-size: 1.5vw !important;
+  }
+
+  /* clock tab numbers */
+  .MuiMenuItem-root {
+    font-size: 2.5vw !important;
+  }
 }
 
-/* desktop */
+/* laptop */
 @media (min-width: 1280px) {
   h1 {
     font-size: 9vw;
@@ -170,24 +217,54 @@ p {
     line-height: 3vw;
   }
 
-  /* top year/month container */
-  .MuiPickersLayout-toolbar {
-    padding: 2vw !important;
+  /* top year */
+  .MuiTypography-subtitle1 {
+    font-size: min(2.5vw, 40px) !important;
   }
 
-  /* bottom month/year row */
-  .MuiPickersCalendarHeader-root {
-    padding: 1vw 2vw 0 2vw !important;
+  /* top month/day */
+  .MuiTypography-h4 {
+    font-size: min(3.5vw, 57px) !important;
+  }
+
+  /* time */
+  .MuiTypography-h3 {
+    font-size: min(3.5vw, 57px) !important;
+  }
+
+  /* am/pm */
+  .MuiTypography-subtitle2 {
+    font-size: min(1.5vw, 25px) !important;
+  }
+
+  /* all icons */
+  .MuiSvgIcon-root:not(.upArrow) {
+    font-size: min(2vw, 33px) !important;
+  }
+
+  /* bottom month/year */
+  .MuiPickersCalendarHeader-label {
+    font-size: min(2vw, 33px) !important;
   }
 
   /* day of week */
   .MuiDayCalendar-weekDayLabel {
-    font-size: 2.5vw !important;
+    font-size: min(2vw, 34px) !important;
   }
 
-  /* individual dumber */
+  /* individual number */
   .MuiPickersDay-root {
-    font-size: 1.5vw !important;
+    font-size: min(1.5vw, 25px) !important;
+  }
+
+  /* bottom button */
+  .MuiDialogActions-root > .MuiButton-text {
+    font-size: min(1.2vw, 21px) !important;
+  }
+
+  /* clock tab numbers */
+  .MuiMenuItem-root {
+    font-size: min(2vw, 34px) !important;
   }
 }
 
@@ -200,6 +277,6 @@ p {
 
   /* calendar picker body */
   .MuiDateCalendar-viewTransitionContainer {
-    padding: 1vw 9vw !important;
+    padding: 1vw min(9vw, 145px) !important;
   }
 }

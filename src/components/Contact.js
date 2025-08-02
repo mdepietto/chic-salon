@@ -66,16 +66,20 @@ const StyledSVG = styled.svg`
 `;
 
 const iconStyles = {
-  fontSize: '8vw',
+  height: '7vw',
+  width: '7vw',
 
   [`@media (min-width: ${screenPixelWidths.tablet})`]: {
-    fontSize: '6vw',
+    height: '5vw',
+    width: '5vw',
   },
   [`@media (min-width: ${screenPixelWidths.tabletL})`]: {
-    fontSize: '5vw',
+    height: '4.5vw',
+    width: '4.5vw',
   },
   [`@media (min-width: ${screenPixelWidths.laptop})`]: {
-    fontSize: '4vw',
+    height: '4vw',
+    width: '4vw',
   },
 }
 
@@ -95,16 +99,12 @@ const Contact = () => (
 
       <ScrollInWrapperHOC Component={InfoWrapper}>
         <h3>Phone</h3>
-        <a href='tel:6318357726'><p>(xxx) xxx-xxxx</p></a>
+        <p>(xxx) xxx-xxxx</p>
         <h3>E-Mail</h3>
-        <a href='mailto:info@wiinksalon.com'><p>info@chicsalon.com</p></a>
+        <p>info@chicsalon.com</p>
         <h3>Address</h3>
-        <a
-          href="https://www.google.com/maps/place/Your+Mother's+House/@40.7420341,-73.6668847,17z/data=!3m1!4b1!4m6!3m5!1s0x89c262aee4dc313f:0x8d839aeebf14796f!8m2!3d40.7420301!4d-73.6620138!16s%2Fg%2F1hc1glml5?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D"
-          target='blank'
-        >
-          <p>882 Sasquahana Blvd.</p>
-        </a>
+        <p>882 Sasquahana Blvd.</p>
+        <p>New York, NY </p>
         <h3>Social</h3>
         <Stack direction="row" spacing={.5}>
           <IconButton aria-label="Instagram">

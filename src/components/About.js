@@ -34,15 +34,20 @@ const About = () => {
     <AboutWrapper>
       <TitleSpacer info="Behind the Lashes" />
       <ScrollInWrapperHOC Component='p'>
-        At CHIC, we believe beauty is in the details — 
-        and nothing makes a statement quite like perfectly styled lashes. 
-        Located in the heart of Port Jeff, our salon specializes in 
-        high-quality lash extensions, lifts, and brow services tailored 
-        to enhance your natural features. Whether you’re preparing for a 
-        special occasion or looking to simplify your daily routine, our licensed 
-        lash artists are dedicated to creating a look that fits your unique style. 
-        With a focus on comfort, precision, and care, we're your go-to 
-        destination for effortless beauty and lasting confidence.
+        Located in the heart of Hell’s Kitchen, NYC, Chic
+        is a modern beauty destination where style meets precision.
+        We specialize in high-end hair services and luxurious lash
+        enhancements, offering a personalized experience that brings
+        out the best in every client. Our team of expert stylists
+        and lash artists are passionate about their craft, staying
+        on the cutting edge of trends, techniques, and treatments.
+        Whether you're here for a fresh cut and color, a full glam
+        lash set, or a subtle enhancement, we’re dedicated to
+        helping you look and feel your best. At Chic,
+        beauty is more than skin deep — it’s about confidence,
+        care, and creating a space where you feel seen, heard,
+        and fabulous. Step into our welcoming studio and leave
+        feeling empowered.
       </ScrollInWrapperHOC>
     </AboutWrapper>
   );

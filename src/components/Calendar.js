@@ -4,33 +4,74 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
 import Modal from './shared/Modal';
 import styled from 'styled-components';
+import { TextField } from '@mui/material';
 
 // continue styling with similarities between old calendar
 const dateTimePickerStyles = {
   backgroundColor: 'var(--theme-pink)',
-  borderRadius: '10px',
+  borderRadius: 'var(--border-radius)',
   width: '100%',
+  minWidth: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  overflowY: 'scroll',
 
-  // uppermost title
+  // remove uppermost title
   '& .MuiPickersToolbar-title': {
     display: 'none',
   },
 
+  // top year
+  '& .MuiTypography-subtitle1': {
+    fontSize: 'min(4vw, 20px)',
+  },
+
   // top month/day
-  '& .MuiDateTimePickerToolbar-dateContainer': {
-    '& span': {
-      color: 'white',
-    },
+  '& .MuiTypography-h4': {
+    color: 'white !important',
+    fontSize: 'min(8vw, 36px)',
+  },
+
+  // time
+  '& .MuiTypography-h3': {
+    alignContent: 'center',
+    color: 'white',
+    fontSize: 'min(9vw, 36px)',
+  },
+
+  '& .MuiTypography-h3[data-selected="true"]': {
+    color: 'white',
+  },
+
+  // am/pm
+  '& .MuiTypography-subtitle2': {
+    fontSize: 'min(4vw, 20px)',
+  },
+
+  // am/pm selected
+  '& .MuiTypography-subtitle2[data-selected="true"]': {
+    color: 'var(--theme-coral)'
+  },
+
+  // all icons
+  '& .MuiSvgIcon-root:not(.upArrow)': {
+    fontSize: 'min(7vw, 26px)',
   },
 
   // tab underline
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent',
+    display: 'none',
+  },
+
+  // bottom section
+  '& .MuiDateCalendar-root': {
+    width: 'auto',
+    height: 'auto',
   },
 
   // bottom month/year header
   '& .MuiPickersCalendarHeader-label': {
-    fontSize: '4.5vw',
+    fontSize: 'min(5vw, 20px)',
     fontFamily: '"Arial", serif',
   },
 
@@ -41,7 +82,7 @@ const dateTimePickerStyles = {
 
   // weekday
   '& .MuiDayCalendar-weekDayLabel': {
-    fontSize: '5vw',
+    fontSize: 'min(5vw, 26px)',
   },
 
   // top section text and days of the week
@@ -52,7 +93,7 @@ const dateTimePickerStyles = {
   // number
   '& .MuiPickersDay-root': {
     color: 'white',
-    fontSize: '3.7vw',
+    fontSize: 'min(4vw, 20px)',
   },
 
   // selected day
@@ -66,31 +107,35 @@ const dateTimePickerStyles = {
   },
 
   // cancel/next/ok
-  '& .MuiButton-text': {
-    color: 'var(--theme-brown)',
+  '& .MuiDialogActions-root': {
+    '& .MuiButton-text': {
+      color: 'var(--theme-brown)',
+      fontSize: 'min(4vw, 20px)',
+    },
   },
 
-  '& .MuiTypography-h3': {
-    color: 'white',
-  },
-
-  '& .MuiTypography-h3[data-selected="true"]': {
-    color: 'white',
-  },
-
-  // am/pm selected
-  '& .MuiTypography-subtitle2[data-selected="true"]': {
-    color: 'var(--theme-coral)'
-  },
-
-  // close button
+  // remove close button
   '& .MuiPickersLayout-actionBar button:nth-of-type(1)': {
     display: 'none',
+  },
+
+  // time tab - time body
+  '& .MuiMultiSectionDigitalClock-root': {
+    width: 'stretch',
+    minWidth: '280px',
+  },
+
+  // number/am pm
+  '& .MuiMenuItem-root': {
+    fontSize: 'min(4vw, 22px)',
   },
 }
 
 const StyledAcceptedModal = styled.div`
   text-align: center;
+  > h3 {
+    margin-top: 0;
+  }
 `;
 
 const Calendar = ({ onClose }) => {
@@ -101,31 +146,83 @@ const Calendar = ({ onClose }) => {
     onClose();
   };
 
+  const [name, setName] = useState('');
+
   const [dateSelected, setDateSelected] = useState();
 
-  const handleSubmit = (newDate) => {
-    setDateSelected(newDate);
+  const [scheduleError, setScheduleError] = useState(false);
 
+  const handleSubmit = (newDate) => {
     setIsAcceptedModalOpen(true);
+
+    if (!newDate) {
+      return setScheduleError(true);
+    }
+
+    setDateSelected(newDate);
   }
 
   const AcceptedModal = () => {
-    const dateString = dateSelected.toDate().toLocaleString('en-US', {
+    const dateString = dateSelected?.toDate().toLocaleString('en-US', {
       hourCycle: 'h12',
       dateStyle: 'long',
       timeStyle: 'short',
     })
 
     return (
-      <StyledAcceptedModal>
-        <p style={{ color: 'var(--theme-peach)' }}>You're scheduled for:</p>
-        <h3>{dateString}</h3>
-      </StyledAcceptedModal>
+      scheduleError ? (
+        <h3>Please make sure to fill in name, date, and time</h3>
+      ) : (
+        <StyledAcceptedModal>
+          <p style={{ color: 'var(--theme-peach)' }}>{name}, you're scheduled for:</p>
+          <h3>{dateString}</h3>
+        </StyledAcceptedModal>
+      )
     )
   }
   
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <TextField
+        id='name'
+        label='Your Name'
+        variant='standard'
+        onChange={({ target: { value } }) => setName(value)}
+        margin='normal'
+        sx={{
+          marginTop: '0',
+          padding: '1vw',
+          backgroundColor: 'var(--theme-pink)',
+          borderRadius: 'var(--border-radius)',
+          label: {
+            color: 'white',
+          },
+          '& .MuiFormLabel-root': {
+            color: 'white',
+            left: '1vw',
+            top: '1vw',
+          },
+          '& .MuiFormLabel-root.MuiInputLabel-root.Mui-focused': {
+            color: 'var(--theme-coral)',
+            fontSize: '20px',
+          },
+          '& .MuiFormLabel-filled': {
+            color: 'white',
+          },
+          input: {
+            color: 'white',
+          },
+          '& .MuiInput-root::before': {
+            borderBottom: '1px solid white',
+          },
+          '& .MuiInput-root::after': {
+            borderBottom: '2px solid var(--theme-coral)',
+          },
+          '& .MuiInput-root:hover:not(.Mui-disabled, .Mui-error)::before': {
+              borderBottom: '2px solid var(--theme-coral)'
+          }
+        }}
+      />
       <StaticDateTimePicker
         sx={dateTimePickerStyles}
         onAccept={(newDate) => handleSubmit(newDate)}

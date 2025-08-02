@@ -55,7 +55,7 @@ const HomePage = ({ ref }) => {
   return (
     <HomePageWrapper ref={ref}>
       <ScrollInWrapperHOC Component={InfoWrapper}>
-        <StyledImage className='main-logo' src={logoWhite} alt='logo' />
+        <StyledImage className='main-logo' src={logoWhite} alt='chic-logo' />
       </ScrollInWrapperHOC>
       <StyledVideo autoPlay muted loop id='palmTrees'>
         <source src={sakura} type='video/mp4' />

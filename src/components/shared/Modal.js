@@ -12,28 +12,24 @@ const ModalContentsWrapper = styled.div`
   background-color: var(--theme-brick);
   width: ${({ modaltype }) => modaltype === 'Services' && '60vw'};
   max-width: 80vw;
-  border-radius: 10px;
-  padding: 6vw;
+  max-height: 90vh;
+  border-radius: var(--border-radius);
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 
-  h2 {
-    margin-bottom: 3vw;
-  }
-
   @media (min-width: ${screenPixelWidths.tablet}) {
-    width: 50vw;
+    width: min(50vw, 450px);
   }
 
   @media (min-width: ${screenPixelWidths.tabletL}) {
-    width: 40vw;
+    width: min(40vw, 450px);
   }
 
   @media (min-width: ${screenPixelWidths.laptop}) {
-    width: 35vw;
-    padding: 4vw;
+    width: min(35vw, 566px);
   }
 `;
 

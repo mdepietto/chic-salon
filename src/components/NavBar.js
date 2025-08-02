@@ -100,6 +100,17 @@ const DropDownMenu = ({ navItems }) => {
   )
 }
 
+const tooltipStyle = {
+  tooltip: {
+    sx: {
+      bgcolor: 'transparent',
+      '& .MuiTooltip-arrow': {
+        color: 'transparent',
+      },
+    },
+  },
+}
+
 const NavBarSwitcher = ({ isHalfway, navItems }) => (
   <Box sx={{ display: 'flex' }}>
     <AppBar
@@ -131,16 +142,7 @@ const NavBarSwitcher = ({ isHalfway, navItems }) => (
                 key={name}
                 title={<p>{name}</p>}
                 placement='left'
-                slotProps={{
-                  tooltip: {
-                    sx: {
-                      bgcolor: 'transparent',
-                      '& .MuiTooltip-arrow': {
-                        color: 'transparent',
-                      },
-                    },
-                  },
-                }}
+                slotProps={tooltipStyle}
               >
                 <IconButton
                   aria-label={name}
@@ -188,7 +190,6 @@ const NavBar = ({ isHalfway }) => {
   const handleOpenServicesModal = () => setIsServicesModalOpen(true);
   const handleCloseServicesModal = () => setIsServicesModalOpen(false);
 
-  // right now, just opening, no option to close
   const handleOpenCalendar = () => setIsCalendarOpen(true);
   const handleCloseCalendar = () => setIsCalendarOpen(false);
 
@@ -208,8 +209,8 @@ const NavBar = ({ isHalfway }) => {
       width: '6vw',
     },
     [`@media (min-width: ${screenPixelWidths.laptop})`]: {
-      height: '5vw',
-      width: '5vw',
+      height: 'min(5vw, 78px)',
+      width: 'min(5vw, 78px)',
     },
   };
   
@@ -218,6 +219,22 @@ const NavBar = ({ isHalfway }) => {
     bottom: '2vw',
     right: '1vw',
     zIndex: '3',
+    paddingLeft: '0',
+
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+
+    '> svg': {
+      fontSize: '10vw',
+
+      [`@media (min-width: ${screenPixelWidths.tabletL})`]: {
+        fontSize: '8vw',
+      },
+      [`@media (min-width: ${screenPixelWidths.laptop})`]: {
+        fontSize: 'min(6vw, 120px)',
+      },
+    },
   }
 
   const navItems = [
@@ -240,7 +257,7 @@ const NavBar = ({ isHalfway }) => {
       name: 'Book Now',
       onClick: handleOpenCalendar,
       style: {
-        backgroundColor: 'var(--theme-gold)',
+        backgroundColor: 'var(--theme-coral)',
         border: '2px solid white',
         // for just words navBar
         [`@media (min-width: ${screenPixelWidths.tabletL})`]: {
@@ -274,24 +291,21 @@ const NavBar = ({ isHalfway }) => {
       />
 
       {isHalfway && (
-        <IconButton
-          aria-label='scrollToTop'
-          sx={scrollUpButtonStyles}
-          onClick={scrollToTop}
+        <Tooltip
+          arrow
+          key='scroll to top'
+          title={<p>Scroll to Top</p>}
+          placement='left'
+          slotProps={tooltipStyle}
         >
-          <ArrowUpward
-            sx={{
-              fontSize: '12vw',
-
-              [`@media (min-width: ${screenPixelWidths.tabletL})`]: {
-                fontSize: '10vw',
-              },
-              [`@media (min-width: ${screenPixelWidths.laptop})`]: {
-                fontSize: '8vw',
-              },
-            }}
-          />
-        </IconButton>
+          <IconButton
+            aria-label='scrollToTop'
+            sx={scrollUpButtonStyles}
+            onClick={scrollToTop}
+          >
+            <ArrowUpward className='upArrow' />
+          </IconButton>
+        </Tooltip>
       )}
     </div>
   );

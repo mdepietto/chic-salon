@@ -39,7 +39,7 @@ const ImagesWrapper = styled.div`
 `;
 
 const StyledImage = styled.img`;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   margin: .5vw;
   aspect-ratio: 1/1;
   width: 48%;
