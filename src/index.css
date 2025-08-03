@@ -146,6 +146,16 @@ p {
     line-height: 3.5vw;
   }
 
+  /* bottom month/year row */
+  .MuiPickersCalendarHeader-root {
+    padding: 1vw 4vw 0 4vw !important;
+  }
+
+  /* calendar picker body */
+  .MuiDateCalendar-viewTransitionContainer {
+    padding: 0 6vw !important;
+  }
+
   /* top year */
   .MuiTypography-subtitle1 {
     font-size: 3vw !important;
@@ -216,6 +226,11 @@ p {
     font-size: 2vw;
     line-height: 3vw;
   }
+  
+  /* calendar picker body */
+  .MuiDateCalendar-viewTransitionContainer {
+    padding: 0 5vw !important;
+  }
 
   /* top year */
   .MuiTypography-subtitle1 {
@@ -270,13 +285,8 @@ p {
 
 /* just for calendar */
 @media (min-width: 1620px) {
-  /* bottom month/year row */
-  .MuiPickersCalendarHeader-root {
-    padding: 1vw 4vw 0 4vw !important;
-  }
-
   /* calendar picker body */
   .MuiDateCalendar-viewTransitionContainer {
-    padding: 1vw min(9vw, 145px) !important;
+    padding: 0 min(9vw, 145px) !important;
   }
 }
